@@ -1,6 +1,8 @@
-function disableLinks() {
-    document.addEventListener('click', function(event) {
+function disableLink(link) {
+    'use strict';
+    link.addEventListener('click', function(event) {
         event.preventDefault();
     });
 }
-disableLinks();
+var linksArray = [].slice.call(document.querySelectorAll('a'));
+linksArray.forEach(disableLink);
